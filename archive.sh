@@ -3,9 +3,6 @@
 # manual setting
 ARCHIVE_PATH="/root/old"
 
-# constant
-REGEX_PATTERN="^(.+)\.(.+)$"
-
 # validate archive path
 if [ ! -d "${ARCHIVE_PATH}"  ]; then
   echo "アーカイブパスが存在しません。シェル内の ARCHIVE_PATH を確認してください"
@@ -26,9 +23,7 @@ fi
 # make archived filename
 DATE_AREA=$(date +%Y-%m-%d)
 ARCHIVE_FILENAME=$(basename "${ARCHIVE_TARGET}")
-# PRE_FILENAME=$(echo "${ARCHIVE_FILENAME}"|sed -E "s:${REGEX_PATTERN}:\1:g")
 PRE_FILENAME=${ARCHIVE_FILENAME%.*}
-# EXTEND=$(echo "${ARCHIVE_FILENAME}"|sed -E "s:${REGEX_PATTERN}:\2:g")
 EXTEND=${ARCHIVE_FILENAME##*.}
 ARCHIVED_FILENAME="${PRE_FILENAME}_${DATE_AREA}.${EXTEND}"
 
