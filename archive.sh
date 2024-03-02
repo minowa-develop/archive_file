@@ -52,7 +52,7 @@ ARCHIVE_RESULT=$?
 echo "log: ${ARCHIVE_TARGET} to ${ARCHIVE_PATH}/${ARCHIVED_FILENAME}"
 
 # result
-if [ "${ARCHIVE_RESULT}" -ne 0 ]; then
+if [ "${ARCHIVE_RESULT}" -gt 0 ]; then
   echo "アーカイブが失敗しました"
 else
   echo "アーカイブ成功しました"
