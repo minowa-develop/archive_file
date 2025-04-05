@@ -1,5 +1,5 @@
 # manual setting
-$ARCHIVE_PATH = "\Users\mihana\tools\archive_tool\old"
+$ARCHIVE_PATH = "\Users\user\tools\archive_tool\old"
 
 # validate archive path
 if (-not (Test-Path -Path $ARCHIVE_PATH)) {
